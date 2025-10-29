@@ -1,0 +1,161 @@
+/* VARIABLES DE COLOR */
+:root {
+  --rojo-vino: #7B2C2C;
+  --beige: #F7E2C2;
+  --marron-oscuro: #3C2F2F;
+}
+
+/* ESTILO DEL NAVBAR */
+#navbar {
+  position: fixed;
+  width: 100%;
+  z-index: 1050;
+  background-color: var(--beige);
+  padding: 0.3rem 0;
+  transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
+}
+
+/* EFECTO BLUR DE FONDO */
+#navbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(12px);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  z-index: -1;
+}
+
+#navbar.scrolled::before {
+  opacity: 1;
+}
+
+/* LOGO */
+#navbar .navbar-brand img {
+  width: 100px;
+  height: 100px;
+}
+
+/* TEXTO AL LADO DEL LOGO */
+.logo-text {
+  display: flex;
+  flex-direction: column;
+  line-height: 1;
+}
+
+.logo-text .golden-crust {
+  font-weight: bold;
+  color: var(--marron-oscuro);
+  font-size: 2rem;
+}
+
+.logo-text .bakery {
+  font-size: 1.2rem;
+  color: var(--marron-oscuro);
+}
+
+/* LINKS DEL MENU */
+.navbar .nav-link {
+  padding: 0.5rem 1.2rem;
+  border-radius: 16px;
+  border: 1px solid transparent;
+  min-width: 100px;
+  text-align: center;
+  color: var(--marron-oscuro);
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: var(--rojo-vino);
+}
+
+/* BOTONES */
+.btn-login {
+  color: var(--rojo-vino);
+  border: 2px solid var(--rojo-vino);
+  background-color: transparent;
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover {
+  background-color: var(--rojo-vino);
+  color: var(--beige);
+}
+
+.btn-signin {
+  color: var(--beige);
+  background-color: var(--rojo-vino);
+  border-radius: 20px;
+  font-weight: bold;
+  transition: all 0.3s ease;
+}
+
+.btn-signin:hover {
+  background-color: #a11f1f; /* versión más oscura al hover */
+}
+
+/* TOGGLER MOBILE ANIMATION */
+.navbar-toggler {
+  border: none;
+  outline: none;
+  position: relative;
+  width: 40px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navbar-toggler .toggler-icon {
+  width: 30px;
+  height: 3px;
+  background-color: var(--marron-oscuro);
+  border-radius: 3px;
+  transition: all 0.4s;
+  position: relative;
+}
+
+.navbar-toggler .toggler-icon::before,
+.navbar-toggler .toggler-icon::after {
+  content: "";
+  width: 30px;
+  height: 3px;
+  background-color: var(--marron-oscuro);
+  border-radius: 3px;
+  position: absolute;
+  transition: all 0.4s;
+}
+
+.navbar-toggler .toggler-icon::before {
+  top: -10px;
+}
+
+.navbar-toggler .toggler-icon::after {
+  bottom: -10px;
+}
+
+.navbar-toggler.collapsed .toggler-icon {
+  background-color: transparent;
+}
+
+.navbar-toggler.collapsed .toggler-icon::before {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.navbar-toggler.collapsed .toggler-icon::after {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* RESPONSIVE */
+@media (max-width: 991px) {
+  .navbar-nav {
+    background-color: var(--beige);
+    padding: 1rem;
+    border-radius: 16px;
+  }
+}

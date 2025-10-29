@@ -1,0 +1,15 @@
+:root {
+  --rojo-vino: #7B2C2C;
+  --beige: #F7E2C2;
+  --marron-oscuro: #3C2F2F;
+  --beige-inter: #E1C8A6;
+  --naranja-tostado: #F0A25A;
+  --beige-calido: #D9B88F;
+}
+
+body {
+  font-size: 16px;
+  font-family: 'Times New Roman', Times, serif;
+  background-color: var(--rojo-vino);
+}
+
