@@ -6,26 +6,26 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Rediseño Web</title>
     <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/bss-overrides.css">
     <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
 </head>
 
-<body>
-<nav id="navbar" class="navbar navbar-expand-lg fixed-top">
+<body class="bg-primary bg-gradient">
+  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
   <div class="container">
-    <!-- Logo y texto central -->
+    <!-- Logo y nombre -->
     <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="assets\img\Icons\Logo.png" alt="Logo" class="rounded-circle">
-      <div class="logo-text ms-2">
-        <span class="golden-crust">Golden Crust</span>
-        <span class="bakery">bakery</span>
-      </div>
+      <img src="assets/img/Icons/Logo.png" alt="Logo" class="rounded-circle">
+      <h2 style="text-align: left; margin-left: 16px; margin-top: 8px; font-size: 32px;">
+        <span class="ms-2">Golden Crust <span style="font-size: 16px; font-weight: normal;">bakery</span></span>
+      </h2>
     </a>
 
     <!-- Botón del menú móvil -->
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
       aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="toggler-icon"></span>
+      <span class="navbar-toggler-icon"></span>
     </button>
 
     <!-- Contenido del Navbar -->
@@ -38,15 +38,24 @@
         <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
       </ul>
 
-      <!-- Botones -->
-      <div class="d-flex">
+      <!-- Botones dentro del menú -->
+      <div class="d-flex justify-content-center mt-2">
         <button class="btn btn-login me-2">Log in</button>
         <button class="btn btn-signin">Sign in</button>
       </div>
     </div>
+
+    <!-- Carrito fuera del collapse (siempre visible) -->
+    <div class="cart-container d-flex align-items-center">
+      <img src="assets/img/Icons/cart.png" alt="Cart" class="cart-icon">
+      <span class="cart-count">2</span>
+      <span class="cart-price">$103.80</span>
+    </div>
+
   </div>
 </nav>
-
-<script src="assets/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/bootstrap/js/bootstrap.min.js"></script>
+    <script src="assets/js/Navbar-Good-Navbar.js"></script>
 </body>
+
 </html>

@@ -1,88 +1,193 @@
-/* VARIABLES DE COLOR */
 :root {
   --rojo-vino: #7B2C2C;
   --beige: #F7E2C2;
   --marron-oscuro: #3C2F2F;
+  --beige-inter: #E1C8A6;
+  --naranja-tostado: #F0A25A;
+  --beige-calido: #D9B88F;
 }
 
-/* ESTILO DEL NAVBAR */
 #navbar {
   position: fixed;
   width: 100%;
   z-index: 1050;
   background-color: var(--beige);
-  padding: 0.3rem 0;
+  padding-top: 0.3rem;
+  padding-bottom: 0.3rem;
   transition: background-color 0.3s ease, backdrop-filter 0.3s ease;
 }
 
-/* EFECTO BLUR DE FONDO */
+#navbar .navbar-brand span {
+  line-height: 1;
+  font-weight: bold;
+  color: var(--marron-oscuro);
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  text-decoration: none;
+  color: var(--rojo-vino);
+  background-color: var(--rojo-vino);
+}
+
+.dropdown-item:focus, .dropdown-item:hover {
+  color: var(--marron-oscuro);
+  background-color: var(--marron-oscuro);
+  /*border-radius: 20px;*/
+}
+
+hr {
+  border: none;
+  height: 1px;
+  background: linear-gradient(to right, transparent, rgba(255,255,255,0.4), transparent);
+}
+
+.btn {
+  border-radius: 20px;
+}
+
 #navbar::before {
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(0, 0, 0, 0.2);
+  background: rgba(0, 0, 0, 0.4);
   backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   opacity: 0;
   transition: opacity 0.3s ease;
   z-index: -1;
+  border-bottom: 1px solid rgba(255,255,255,0.1);
 }
 
 #navbar.scrolled::before {
   opacity: 1;
 }
 
-/* LOGO */
-#navbar .navbar-brand img {
-  width: 100px;
-  height: 100px;
-}
-
-/* TEXTO AL LADO DEL LOGO */
-.logo-text {
-  display: flex;
-  flex-direction: column;
-  line-height: 1;
-}
-
-.logo-text .golden-crust {
-  font-weight: bold;
-  color: var(--marron-oscuro);
-  font-size: 2rem;
-}
-
-.logo-text .bakery {
-  font-size: 1.2rem;
-  color: var(--marron-oscuro);
-}
-
-/* LINKS DEL MENU */
 .navbar .nav-link {
   padding: 0.5rem 1.2rem;
   border-radius: 16px;
   border: 1px solid transparent;
   min-width: 100px;
   text-align: center;
-  color: var(--marron-oscuro);
-  font-weight: bold;
   transition: all 0.3s ease;
 }
 
-.navbar .nav-link:hover,
-.navbar .nav-link.active {
-  color: var(--rojo-vino);
+.navbar .nav-link:not(.dropdown-toggle) {
+  position: relative;
+  transition: color 0.3s ease;
 }
 
-/* BOTONES */
+.navbar .nav-link:not(.dropdown-toggle)::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 2px;
+  background-color: #ffffff;
+  transition: width 0.3s ease;
+}
+
+.navbar .nav-link:not(.dropdown-toggle):hover::after, .navbar .nav-link:not(.dropdown-toggle).active::after {
+  width: 100%;
+}
+
+#navbar .navbar-brand img {
+  width: 100px;
+  height: 100px;
+}
+
+.navbar .nav-link:hover {
+  color: #ffffff;
+}
+
+
+/* --- Colores al hacer click / active --- */
+.navbar .nav-link.active,
+.navbar .nav-link:focus,
+.navbar .nav-link:active {
+  color: var(--rojo-vino) !important;
+}
+
+.navbar .nav-link.active::after,
+.navbar .nav-link:focus::after,
+.navbar .nav-link:active::after {
+  background-color: var(--rojo-vino);
+  width: 100%;
+}
+
+/* --- Botones personalizados --- */
+.btn-login {
+  color: var(--rojo-vino);
+  background-color: var(--beige);
+  border: 2px solid var(--rojo-vino);
+  transition: all 0.3s ease;
+}
+
+.btn-login:hover,
+.btn-login:active {
+  color: var(--beige);
+  background-color: var(--rojo-vino);
+}
+
+.btn-signin {
+  color: var(--beige);
+  background-color: var(--rojo-vino);
+  border: 2px solid var(--rojo-vino);
+  transition: all 0.3s ease;
+}
+
+.btn-signin:hover,
+.btn-signin:active {
+  color: var(--rojo-vino);
+  background-color: var(--beige);
+}
+/* --- CARRITO --- */
+.cart-container {
+  display: flex;
+  align-items: center;
+  border: 2px solid var(--rojo-vino);
+  border-radius: 20px;
+  padding: 5px 10px;
+  background-color: var(--beige);
+  position: relative;
+}
+
+.cart-icon {
+  width: 28px;
+  height: 28px;
+  margin-right: 8px;
+}
+
+.cart-count {
+  position: absolute;
+  top: -5px;
+  right: -5px;
+  background-color: red;
+  color: white;
+  font-size: 0.75rem;
+  font-weight: bold;
+  border-radius: 50%;
+  padding: 2px 6px;
+}
+
+.cart-price {
+  color: var(--marron-oscuro);
+  font-weight: bold;
+  font-size: 0.9rem;
+}
+
+/* --- BOTONES LOGIN / SIGNIN --- */
 .btn-login {
   color: var(--rojo-vino);
   border: 2px solid var(--rojo-vino);
-  background-color: transparent;
-  border-radius: 20px;
+  background-color: var(--beige);
   font-weight: bold;
+  border-radius: 20px;
   transition: all 0.3s ease;
 }
 
-.btn-login:hover {
+.btn-login:hover,
+.btn-login:active {
   background-color: var(--rojo-vino);
   color: var(--beige);
 }
@@ -90,72 +195,42 @@
 .btn-signin {
   color: var(--beige);
   background-color: var(--rojo-vino);
-  border-radius: 20px;
+  border: 2px solid var(--rojo-vino);
   font-weight: bold;
+  border-radius: 20px;
   transition: all 0.3s ease;
 }
 
-.btn-signin:hover {
-  background-color: #a11f1f; /* versión más oscura al hover */
+.btn-signin:hover,
+.btn-signin:active {
+  background-color: var(--beige);
+  color: var(--rojo-vino);
 }
 
-/* TOGGLER MOBILE ANIMATION */
-.navbar-toggler {
-  border: none;
-  outline: none;
-  position: relative;
-  width: 40px;
-  height: 30px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.navbar-toggler .toggler-icon {
-  width: 30px;
-  height: 3px;
-  background-color: var(--marron-oscuro);
-  border-radius: 3px;
-  transition: all 0.4s;
-  position: relative;
-}
-
-.navbar-toggler .toggler-icon::before,
-.navbar-toggler .toggler-icon::after {
-  content: "";
-  width: 30px;
-  height: 3px;
-  background-color: var(--marron-oscuro);
-  border-radius: 3px;
-  position: absolute;
-  transition: all 0.4s;
-}
-
-.navbar-toggler .toggler-icon::before {
-  top: -10px;
-}
-
-.navbar-toggler .toggler-icon::after {
-  bottom: -10px;
-}
-
-.navbar-toggler.collapsed .toggler-icon {
-  background-color: transparent;
-}
-
-.navbar-toggler.collapsed .toggler-icon::before {
-  transform: rotate(45deg) translate(5px, 5px);
-}
-
-.navbar-toggler.collapsed .toggler-icon::after {
-  transform: rotate(-45deg) translate(5px, -5px);
-}
-
-/* RESPONSIVE */
-@media (max-width: 991px) {
-  .navbar-nav {
-    background-color: var(--beige);
-    padding: 1rem;
-    border-radius: 16px;
+/* --- RESPONSIVE para ocultar solo el texto del título en móvil --- */
+@media (max-width: 576px) {
+  .navbar-brand h2 span.ms-2 {
+    display: none;
   }
+
+  /* Mantener carrito y botones centrados horizontalmente */
+  .d-flex.align-items-center.flex-nowrap {
+    justify-content: center;
+    gap: 10px;
+  }
+}
+
+/* --- CARRITO: separación de botones y posición en móvil --- */
+.cart-container {
+  margin-left: 15px; /* espacio respecto a los botones */
+}
+
+
+/* --- Hover de links: línea y texto color vino --- */
+.navbar .nav-link:not(.dropdown-toggle)::after {
+  background-color: var(--rojo-vino); /* línea color vino */
+}
+
+.navbar .nav-link:hover {
+  color: var(--rojo-vino); /* texto color vino al pasar el cursor */
 }
