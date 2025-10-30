@@ -1,0 +1,81 @@
+.hero-section {
+    background-color: var(--rojo-vino); /* fondo vino */
+    padding: 2rem 0; /* separa el hero del navbar */
+}
+
+.hero {
+    position: relative;
+    width: 100%;
+    height: 500px; /* altura fija del hero */
+    background: url("../img/Background/BreadOnTable.jpg") center / cover no-repeat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 12px; /* opcional, bordes redondeados */
+    overflow: hidden;
+}
+
+/* Overlay para resaltar el texto */
+.hero::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: rgba(0,0,0,0.3);
+    z-index: 1;
+}
+
+/* Contenido del hero */
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    text-align: center;
+    color: var(--beige);
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+/* Subtítulo */
+.hero-subtitle {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+}
+
+/* Texto descriptivo */
+.hero-text {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+}
+
+/* Botón */
+.btn-hero {
+    background-color: var(--rojo-vino);
+    color: var(--beige);
+    border: none;
+    border-radius: 20px;
+    padding: 1rem 2.5rem;
+    font-size: 1.2rem;
+    font-family: 'Times New Roman', Times, serif;
+    font-weight: bold;
+    transition: background-color 0.3s ease;
+}
+
+.btn-hero:hover {
+    background-color: #5a2020;
+}
+
+.hero-inner {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: var(--beige);
+    font-family: 'Times New Roman', Times, serif;
+    max-width: 800px;
+    width: 100%;
+    height: 100%;
+    padding: 0 1rem;
+    margin-top: 50px; /* baja el contenido 10px */
+}

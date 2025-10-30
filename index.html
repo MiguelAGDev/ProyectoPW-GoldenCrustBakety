@@ -1,61 +1,47 @@
 <!DOCTYPE html>
-<html data-bs-theme="light" lang="en">
+<html data-bs-theme="light" lang="en" data-bss-forced-theme="light">
 
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>Rediseño Web</title>
-    <link rel="stylesheet" href="assets/bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/css/bss-overrides.css">
-    <link rel="stylesheet" href="assets/css/navbar.css">
     <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="stylesheet" href="assets/css/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="assets/css/css/bss-overrides.css">
+    <link rel="stylesheet" href="assets/css/css/navbar.css">
+    <link rel="stylesheet" href="assets/css/hero.css">
 </head>
 
-<body class="bg-primary bg-gradient">
-  <nav id="navbar" class="navbar navbar-expand-lg fixed-top">
-  <div class="container">
-    <!-- Logo y nombre -->
-    <a class="navbar-brand d-flex align-items-center" href="#">
-      <img src="assets/img/Icons/Logo.png" alt="Logo" class="rounded-circle">
-      <h2 style="text-align: left; margin-left: 16px; margin-top: 8px; font-size: 32px;">
-        <span class="ms-2">Golden Crust <span style="font-size: 16px; font-weight: normal;">bakery</span></span>
-      </h2>
-    </a>
-
-    <!-- Botón del menú móvil -->
-    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
-      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-
-    <!-- Contenido del Navbar -->
-    <div class="collapse navbar-collapse" id="navbarNav">
-      <!-- Links -->
-      <ul class="navbar-nav ms-auto me-3">
-        <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">History</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
-      </ul>
-
-      <!-- Botones dentro del menú -->
-      <div class="d-flex justify-content-center mt-2">
-        <button class="btn btn-login me-2">Log in</button>
-        <button class="btn btn-signin">Sign in</button>
+<body class="bg-primary mt-0 pt-0">
+    <nav class="navbar navbar-expand-lg fixed-top" id="navbar">
+        <div class="container"><a class="navbar-brand d-flex align-items-center" href="#"><img class="rounded-circle" src="assets/img/Icons/Logo.png" alt="Logo">
+                <h2 style="text-align:left;margin-left:16px;margin-top:8px;font-size:32px;"><span class="ms-2">Golden Crust <span style="font-size:16px;font-weight:normal;">bakery</span></span></h2>
+            </a><button data-bs-toggle="collapse" data-bs-target="#navbarNav" class="navbar-toggler" type="button" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto me-3">
+                    <li class="nav-item"><a class="nav-link" href="#">Menu</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">History</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Shop</a></li>
+                </ul>
+                <div class="d-flex justify-content-center mt-2"><button class="btn me-2 btn-login">Log in</button><button class="btn btn-signin">Sign in</button></div>
+            </div>
+            <div class="d-flex align-items-center cart-container"><img src="assets/img/Icons/cart.png" alt="Cart" class="cart-icon"><span class="cart-count">2</span><span class="cart-price">$103.80</span></div>
+        </div>
+    </nav>
+    
+    <section class="hero">
+      <div class="hero-inner">
+        <div class="hero-inner">
+          <p class="hero-subtitle">Baked with love, served with a smile.</p>
+          <p class="hero-text">Cada pan que horneamos guarda el calor de nuestro horno y el cariño de nuestra gente.</p>
+          <button class="btn btn-hero">Order now</button>
+        </div>
       </div>
-    </div>
-
-    <!-- Carrito fuera del collapse (siempre visible) -->
-    <div class="cart-container d-flex align-items-center">
-      <img src="assets/img/Icons/cart.png" alt="Cart" class="cart-icon">
-      <span class="cart-count">2</span>
-      <span class="cart-price">$103.80</span>
-    </div>
-
-  </div>
-</nav>
+    </section>
     <script src="assets/bootstrap/js/bootstrap.min.js"></script>
     <script src="assets/js/Navbar-Good-Navbar.js"></script>
+    <script src="assets/js/bootstrap/js/bootstrap.min.js"></script>
 </body>
 
 </html>
